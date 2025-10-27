@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mockstagram Components Demo - HAX Webcomponents</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: #f5f5f5;
+            line-height: 1.6;
+        }
+        
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .demo-section {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .demo-section:last-child {
+            border-bottom: none;
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        
+        h2 {
+            color: #444;
+            border-left: 4px solid #ff6b35;
+            padding-left: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .description {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .hax-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin: 5px;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .feature {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .feature strong {
+            color: #1976d2;
+        }
+        
+        code {
+            background: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Menlo', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <h1>🎯 Mockstagram HAX Webcomponents</h1>
+        <p class="subtitle">Instagram-style Photo Gallery with Domain Driven Design Architecture</p>
+        
+        <div class="hax-badges" style="text-align: center; margin-bottom: 30px;">
+            <span class="hax-badge">HAX Compatible</span>
+            <span class="hax-badge">Domain Driven Design</span>
+            <span class="hax-badge">Lazy Loading</span>
+            <span class="hax-badge">50+ Images</span>
+            <span class="hax-badge">Social Features</span>
+        </div>
+
+        <div class="demo-section">
+            <h2>📱 Full Gallery Component</h2>
+            <div class="description">
+                The <code>&lt;fox-gallery&gt;</code> component provides a complete Instagram-style photo feed with social interactions, lazy loading, and DDD architecture. It supports both random fox photos and curated social media posts.
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <strong>🔄 Dual Data Sources</strong><br>
+                    Random Fox API + Social Feed
+                </div>
+                <div class="feature">
+                    <strong>💾 Domain Architecture</strong><br>
+                    Entities, Services, Repositories
+                </div>
+                <div class="feature">
+                    <strong>⚡ Performance</strong><br>
+                    Lazy loading + Caching
+                </div>
+                <div class="feature">
+                    <strong>📱 Responsive</strong><br>
+                    Mobile-first design
+                </div>
+            </div>
+
+            <!-- Full Gallery Demo -->
+            <fox-gallery api-mode="custom"></fox-gallery>
+        </div>
+
+        <div class="demo-section">
+            <h2>🖼️ Individual Photo Card</h2>
+            <div class="description">
+                The <code>&lt;fox-photo-card&gt;</code> component represents a single social media post with author information, engagement buttons, and sharing capabilities. Features conditional image loading for performance.
+            </div>
+
+            <!-- Individual Card Demo -->
+            <fox-photo-card 
+                photo='{"id":"demo-001","source":"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&h=400&fit=crop&crop=center","thumbnail":"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=300&h=200&fit=crop&crop=center","title":"Demo coffee post ☕ Perfect for component showcase!","date":"2024-10-26","author":{"name":"hax_developer","image":"https://images.unsplash.com/photo-1494790108755-2616c043054c?w=50&h=50&fit=crop&crop=face","userSince":"2024","channel":"HAX Demos"},"likes":42,"dislikes":1}'>
+            </fox-photo-card>
+        </div>
+
+        <div class="demo-section">
+            <h2>🔧 HAX Integration Features</h2>
+            <div class="description">
+                These components are fully compatible with the HAX ecosystem and can be used in HAX-powered websites and content management systems.
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <strong>📝 JSDoc Annotations</strong><br>
+                    Complete component documentation
+                </div>
+                <div class="feature">
+                    <strong>🎛️ HAX Gizmos</strong><br>
+                    Visual configuration interface
+                </div>
+                <div class="feature">
+                    <strong>📊 Custom Elements Manifest</strong><br>
+                    Machine-readable component data
+                </div>
+                <div class="feature">
+                    <strong>🎨 Design System</strong><br>
+                    Consistent styling and theming
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>🚀 Technical Implementation</h2>
+            <div class="description">
+                Built with modern web standards and enterprise patterns:
+                <ul>
+                    <li><strong>Lit 3.3.1</strong> - Efficient web components framework</li>
+                    <li><strong>Domain Driven Design</strong> - Clean architecture patterns</li>
+                    <li><strong>Intersection Observer API</strong> - Performance-optimized lazy loading</li>
+                    <li><strong>Local Storage Services</strong> - Persistent user interactions</li>
+                    <li><strong>Repository Pattern</strong> - Data access abstraction</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Import the components -->
+    <script type="module" src="../src/fox-gallery.js"></script>
+</body>
+</html>
