@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug - Mockstagram</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        .debug-info {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #ff6b35;
+        }
+        .error {
+            background: #fee;
+            color: #c00;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .success {
+            background: #efe;
+            color: #060;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="debug-info">
+        <h2>🔍 Mockstagram Debug Page</h2>
+        <p>This page helps identify loading issues on Vercel.</p>
+        
+        <h3>Module Loading Test:</h3>
+        <div id="module-status">Testing...</div>
+        
+        <h3>Component Registration Test:</h3>
+        <div id="component-status">Testing...</div>
+        
+        <h3>Data Loading Test:</h3>
+        <div id="data-status">Testing...</div>
+        
+        <h3>Console Errors:</h3>
+        <div id="error-log">Checking...</div>
+    </div>
+
+    <div class="debug-info">
+        <h3>If modules load successfully, the gallery should appear below:</h3>
+        <fox-gallery></fox-gallery>
+    </div>
+
+    <script type="module">
+        const moduleStatus = document.getElementById('module-status');
+        const componentStatus = document.getElementById('component-status');
+        const dataStatus = document.getElementById('data-status');
+        const errorLog = document.getElementById('error-log');
+
+        // Capture console errors
+        const errors = [];
+        const originalError = console.error;
+        console.error = function(...args) {
+            errors.push(args.join(' '));
+            originalError.apply(console, arguments);
+            errorLog.innerHTML = errors.length > 0 
+                ? errors.map(e => `<div class="error">${e}</div>`).join('')
+                : '<div class="success">No errors detected</div>';
+        };
+
+        try {
+            // Test 1: Try to import the main module
+            import('./src/fox-gallery.js').then(() => {
+                moduleStatus.innerHTML = '<div class="success">✅ Module imported successfully</div>';
+                
+                // Test 2: Check if custom element is registered
+                setTimeout(() => {
+                    if (customElements.get('fox-gallery')) {
+                        componentStatus.innerHTML = '<div class="success">✅ fox-gallery component registered</div>';
+                    } else {
+                        componentStatus.innerHTML = '<div class="error">❌ fox-gallery component not registered</div>';
+                    }
+                }, 100);
+                
+            }).catch(error => {
+                moduleStatus.innerHTML = `<div class="error">❌ Module import failed: ${error.message}</div>`;
+            });
+
+            // Test 3: Try to fetch data
+            fetch('./data/social-posts.json').then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+            }).then(data => {
+                dataStatus.innerHTML = `<div class="success">✅ Data loaded: ${data.photos?.length || 0} posts</div>`;
+            }).catch(error => {
+                dataStatus.innerHTML = `<div class="error">❌ Data loading failed: ${error.message}</div>`;
+            });
+
+        } catch (error) {
+            moduleStatus.innerHTML = `<div class="error">❌ Script error: ${error.message}</div>`;
+        }
+
+        // Check for errors after 2 seconds
+        setTimeout(() => {
+            if (errors.length === 0) {
+                errorLog.innerHTML = '<div class="success">No JavaScript errors detected</div>';
+            }
+        }, 2000);
+    </script>
+</body>
+</html>
