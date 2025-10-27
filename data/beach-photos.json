@@ -1,0 +1,134 @@
+﻿{
+  "photos": [
+    {
+      "id": "beach-001",
+      "source": "https://picsum.photos/600/400?random=1",
+      "thumbnail": "https://picsum.photos/300/200?random=1",
+      "title": "Tropical Paradise Beach",
+      "date": "2024-10-20",
+      "author": {
+        "name": "SeaBreeze",
+        "image": "https://picsum.photos/50/50?random=101",
+        "userSince": "2020",
+        "channel": "Ocean Views"
+      }
+    },
+    {
+      "id": "beach-002",
+      "source": "https://picsum.photos/600/400?random=2",
+      "thumbnail": "https://picsum.photos/300/200?random=2",
+      "title": "Golden Hour Beach Waves",
+      "date": "2024-10-19",
+      "author": {
+        "name": "SunsetChaser",
+        "image": "https://picsum.photos/50/50?random=102",
+        "userSince": "2019",
+        "channel": "Beach Photography"
+      }
+    },
+    {
+      "id": "beach-003",
+      "source": "https://picsum.photos/600/400?random=3",
+      "thumbnail": "https://picsum.photos/300/200?random=3",
+      "title": "Crystal Clear Waters",
+      "date": "2024-10-18",
+      "author": {
+        "name": "AquaLens",
+        "image": "https://picsum.photos/50/50?random=103",
+        "userSince": "2021",
+        "channel": "Clear Waters"
+      }
+    },
+    {
+      "id": "beach-004",
+      "source": "https://picsum.photos/600/400?random=4",
+      "thumbnail": "https://picsum.photos/300/200?random=4",
+      "title": "Secluded Beach Cove",
+      "date": "2024-10-17",
+      "author": {
+        "name": "CoastalExplorer",
+        "image": "https://picsum.photos/50/50?random=104",
+        "userSince": "2018",
+        "channel": "Hidden Beaches"
+      }
+    },
+    {
+      "id": "beach-005",
+      "source": "https://picsum.photos/600/400?random=5",
+      "thumbnail": "https://picsum.photos/300/200?random=5",
+      "title": "Sunset Beach Silhouette",
+      "date": "2024-10-16",
+      "author": {
+        "name": "GoldenHour",
+        "image": "https://picsum.photos/50/50?random=105",
+        "userSince": "2022",
+        "channel": "Sunset Photos"
+      }
+    },
+    {
+      "id": "beach-006",
+      "source": "https://picsum.photos/600/400?random=6",
+      "thumbnail": "https://picsum.photos/300/200?random=6",
+      "title": "Turquoise Beach Paradise",
+      "date": "2024-10-15",
+      "author": {
+        "name": "TropicalVibes",
+        "image": "https://picsum.photos/50/50?random=106",
+        "userSince": "2020",
+        "channel": "Paradise Found"
+      }
+    },
+    {
+      "id": "beach-007",
+      "source": "https://picsum.photos/600/400?random=7",
+      "thumbnail": "https://picsum.photos/300/200?random=7",
+      "title": "Pristine White Sand Beach",
+      "date": "2024-10-14",
+      "author": {
+        "name": "PureSand",
+        "image": "https://picsum.photos/50/50?random=107",
+        "userSince": "2019",
+        "channel": "White Sands"
+      }
+    },
+    {
+      "id": "beach-008",
+      "source": "https://picsum.photos/600/400?random=8",
+      "thumbnail": "https://picsum.photos/300/200?random=8",
+      "title": "Dramatic Coastline View",
+      "date": "2024-10-13",
+      "author": {
+        "name": "CoastalDrama",
+        "image": "https://picsum.photos/50/50?random=108",
+        "userSince": "2021",
+        "channel": "Dramatic Views"
+      }
+    },
+    {
+      "id": "beach-009",
+      "source": "https://picsum.photos/600/400?random=9",
+      "thumbnail": "https://picsum.photos/300/200?random=9",
+      "title": "Palm Tree Beach Paradise",
+      "date": "2024-10-12",
+      "author": {
+        "name": "PalmTreeDreamer",
+        "image": "https://picsum.photos/50/50?random=109",
+        "userSince": "2022",
+        "channel": "Tropical Dreams"
+      }
+    },
+    {
+      "id": "beach-010",
+      "source": "https://picsum.photos/600/400?random=10",
+      "thumbnail": "https://picsum.photos/300/200?random=10",
+      "title": "Endless Ocean Horizon",
+      "date": "2024-10-11",
+      "author": {
+        "name": "HorizonSeeker",
+        "image": "https://picsum.photos/50/50?random=110",
+        "userSince": "2020",
+        "channel": "Infinite Views"
+      }
+    }
+  ]
+}

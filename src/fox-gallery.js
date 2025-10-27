@@ -190,11 +190,6 @@ export class FoxGallery extends LitElement {
         // Listen for theme changes
         this.themeListener = () => this.updateTheme();
         document.addEventListener('themechange', this.themeListener);
-        
-        // Auto-load social feed on first load for better UX
-        if (this.foxPhotos.length === 0) {
-            setTimeout(() => this.handleLoadPhotos(), 100);
-        }
     }
 
     disconnectedCallback() {
@@ -419,10 +414,7 @@ export class FoxGallery extends LitElement {
             ` : ''}
 
             ${this.loading ? html`
-                <div class="loading">
-                    <div class="loading-spinner"></div>
-                    📸 Loading Mockstagram feed...
-                </div>
+                <div class="loading">🦊 Loading fox photos...</div>
             ` : ''}
 
             ${this.foxPhotos.length > 0 ? html`

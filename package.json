@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "web-dev-server --node-resolve --open",
-    "build": "echo 'Build complete - using static files'",
+
     "serve": "web-dev-server --node-resolve --open --port 8000",
     "test": "echo \"Error: no test specified\" && exit 1",
     "analyze": "wca analyze 'src/**/*.js' --outFile custom-elements.json",
